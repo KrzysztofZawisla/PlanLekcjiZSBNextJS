@@ -28,7 +28,10 @@ const Lesson = (props) => {
     },
     lessonSubject: props.lessonSubject == "" || props.lessonSubject == undefined ? "Nie podałeś nazwy przedmiotu" : props.lessonSubject,
     lessonGroup: () => {
-      switch(props.lessonGroup) {
+      if(props.lessonGroup == "" || props.lessonGroup == undefined) {
+        return null;
+      }
+      switch(props.lessonGroup.toUpperCase()) {
         case "1":
           return "Gr. 1";
         case "2":
@@ -37,6 +40,14 @@ const Lesson = (props) => {
           return "Gr. 3";
         case "4":
           return "Gr. 4";
+        case "A1":
+          return "A1";
+        case "A2":
+          return "A2";
+        case "A3":
+          return "A3";
+        case "A4":
+          return "A4";
         case "A5":
           return "A5";
         case "A6":
@@ -58,6 +69,7 @@ const Lesson = (props) => {
         .Lesson {
           padding: 2.5px 0;
           font-size: 14px;
+          background: #fafafa;
         }
       `}</style>
       { states.lessonNumber() } { states.lessonSubject } { states.lessonGroup() } { states.lessonClass } { states.lessonTeacher }
