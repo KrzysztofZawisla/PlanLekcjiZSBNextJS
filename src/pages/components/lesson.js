@@ -57,6 +57,7 @@ const Lesson = (props) => {
       <style jsx>{`
         .Lesson {
           padding: 2.5px 0;
+          font-size: 14px;
         }
       `}</style>
       { states.lessonNumber() } { states.lessonSubject } { states.lessonGroup() } { states.lessonClass } { states.lessonTeacher }

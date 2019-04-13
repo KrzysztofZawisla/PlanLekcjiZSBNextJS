@@ -2,11 +2,11 @@ import Layout from "./components/layout";
 import Day from "./components/day";
 import Lesson from "./components/lesson";
 
-const Class1ba = () => {
+const Class2ba = () => {
   return(
-    <Layout pageTitle="1bA">
+    <Layout pageTitle="2bA">
     </Layout>
   );
 }
 
-export default Class1ba;
+export default Class2ba;
