@@ -8,7 +8,7 @@ export default class Webscrap extends React.Component {
     this.webscrapClass = props.webscrapClass == "" || props.webscrapClass == undefined ? "error" : props.webscrapClass.toLowerCase()
   }
   componentDidMount() {
-    axios.get("https://preset-october.000webhostapp.com/index.php?klasa="+this.webscrapClass).then((res) => {
+    axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?klasa="+this.webscrapClass).then((res) => {
       this.webscrapData = res.data;
     }).then(() => {
       this.render();
