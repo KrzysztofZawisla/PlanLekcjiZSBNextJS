@@ -5,7 +5,7 @@ const Class3 = () => {
   return(
     <Layout>
       <Button buttonText="3bA" buttonLink="3ba"/>
-      <Button buttonText="3bB" buttonLink="3bB"/>
+      <Button buttonText="3bB" buttonLink="3bb"/>
       <Button buttonText="3iA" buttonLink="3ia"/>
       <Button buttonText="3iB" buttonLink="3ib"/>
       <Button buttonText="3GI" buttonLink="3gi"/>
