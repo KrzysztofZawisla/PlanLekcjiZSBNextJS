@@ -19,9 +19,8 @@ export default class Webscrap extends React.Component {
           #resDiv {
             width: 100%;
             height: auto;
-            margin: 0 auto 15px auto;
+            margin: 0 auto;
             text-align: center;
-            min-width: 0;
           }
           .tabela {
             background: black;
