@@ -54,7 +54,7 @@ const Layout = (props) => {
       <style jsx>{`
         main {
           padding: 15px;
-          min-height: calc(100vh - 135.8px);
+          min-height: calc(100vh - 135.7px);
         }
       `}</style>
       <main>

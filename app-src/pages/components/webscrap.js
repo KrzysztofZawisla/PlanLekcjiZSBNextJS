@@ -4,6 +4,7 @@ import React from "react";
 export default class Webscrap extends React.Component {
   constructor(props) {
     super(props);
+    this.workingText = "Pracuje nad tym... ⏳",
     this.webscrapData = null,
     this.webscrapClass = props.webscrapClass == "" || props.webscrapClass == undefined ? "error" : props.webscrapClass.toLowerCase()
   }
@@ -11,12 +12,15 @@ export default class Webscrap extends React.Component {
     axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?klasa="+this.webscrapClass).then((res) => {
       this.webscrapData = res.data;
     }).then(() => {
-      this.render();
+      this.workingText = "";
+    }).then(() => {
+      this.forceUpdate();
     });
   }
   render() {
     return(
       <div id="resDiv">
+        <div>{ this.workingText }</div>
         <div dangerouslySetInnerHTML={{ __html: this.webscrapData }}></div>
         <style jsx>{`
           #resDiv {
