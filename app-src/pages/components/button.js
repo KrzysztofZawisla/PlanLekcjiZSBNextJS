@@ -27,13 +27,13 @@ const Button = (props) => {
         <style jsx>{`
           .Button {
             width: 100%;
+            margin 0 auto 15px auto;
             background: ${ states.buttonColor() };
             padding: 5px;
             text-align: center;
             border-radius: 5px;
             font-size: 24px;
             color: #fff;
-            margin-bottom: 15px;
           }
           .Button:last-child {
             margin-top: 0;

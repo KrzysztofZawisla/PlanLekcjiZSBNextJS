@@ -11,9 +11,10 @@ export default class Webscrap extends React.Component {
   componentDidMount() {
     axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?klasa="+this.webscrapClass).then((res) => {
       this.webscrapData = res.data;
-    }).then(() => {
       this.workingText = "";
-    }).then(() => {
+      this.forceUpdate();
+    }).catch(() => {
+      this.workingText = "Coś poszło nie tak 🙁";
       this.forceUpdate();
     });
   }
