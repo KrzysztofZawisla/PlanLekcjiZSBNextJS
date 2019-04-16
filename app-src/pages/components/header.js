@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return(
-    <div id="Header">
+    <header id="Header">
       <style jsx>{`
         #Header {
           text-align: center;
@@ -19,7 +19,7 @@ const Header = () => {
         }
       `}</style>
       <Link href="/"><a><img src="/static/logo.png" alt="Logo"/></a></Link>
-    </div>
+    </header>
   );
 }
 

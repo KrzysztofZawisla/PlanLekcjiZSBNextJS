@@ -1,6 +1,6 @@
 const Footer = () => {
   return(
-    <div id="Footer">
+    <footer id="Footer">
       <style jsx>{`
         #Footer {
           position: relative;
@@ -19,7 +19,7 @@ const Footer = () => {
         }
       `}</style>
       <a href="https://github.com/KrzysztofZawisla">Krzysztof Zawisła &copy;</a>
-    </div>
+    </footer>
   );
 }
 

@@ -3,12 +3,14 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 
+const { Fragment } = React;
+
 const Layout = (props) => {
   const states = {
     pageTitle: props.pageTitle == "" || props.pageTitle == undefined ? "" : props.pageTitle
   };
   return(
-    <div>
+    <Fragment>
       <Head>
         <title>Plan lekcji { states.pageTitle }</title>
         <meta name="description" content="Aplikacja internetowa z planem lekcji."/>
@@ -33,35 +35,37 @@ const Layout = (props) => {
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet"/>
         <link href="/static/manifest.json" rel="manifest"/>
       </Head>
-      <Header/>
-      <style jsx global>{`
-        *, *::after, *::before {
-          box-sizing: border-box;
-          padding: 0;
-          margin: 0;
-          border: 0;
-          outline: 0;
-        }
-        body {
-          font-family: 'Open Sans', sans-serif;
-          -webkit-user-select: none;
-        }
-        ::-webkit-scrollbar {
-          width: 0;
-          height: 0;
-        }
-      `}</style>
-      <style jsx>{`
-        main {
-          padding: 15px;
-          min-height: calc(100vh - 135.7px);
-        }
-      `}</style>
-      <main>
-        { props.children }
-      </main>
+      <div id="Wrapper">
+        <Header/>
+        <style jsx global>{`
+          *, *::after, *::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            outline: 0;
+          }
+          body {
+            font-family: 'Open Sans', sans-serif;
+            -webkit-user-select: none;
+          }
+          ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+          }
+        `}</style>
+        <style jsx>{`
+          main {
+            padding: 15px;
+          }
+          #Wrapper {
+            min-height: 100vh;
+          }
+        `}</style>
+        <main>{ props.children }</main>
+      </div>
       <Footer/>
-    </div>
+    </Fragment>
   );
 }
 
