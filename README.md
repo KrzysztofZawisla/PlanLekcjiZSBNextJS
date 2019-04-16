@@ -10,3 +10,4 @@ Used libraries, frameworks and NPM modules:
   - ReactJS https://reactjs.org/
   - NextJS https://nextjs.org/
   - Axios https://www.npmjs.com/package/axios
+  - googlefonts-font-display-helper https://googlefonts.3perf.com/ https://github.com/iamakulov/googlefonts-font-display-helper
