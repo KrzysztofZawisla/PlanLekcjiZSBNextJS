@@ -13,6 +13,10 @@ const Layout = (props) => {
     <Fragment>
       <Head>
         <title>Plan lekcji { states.pageTitle }</title>
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" as="fetch" crossorigin="anonymous"/>
+        <script type="text/javascript" src="/static/fontLoadBalancer.js"></script>
         <meta name="description" content="Aplikacja internetowa z planem lekcji."/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="keywords" content="Plan lekcji, ZSB, Plan, Szkoła, Technikum, Technikum nr. 4, Rybnik, Zawisła"/>
@@ -32,7 +36,6 @@ const Layout = (props) => {
         <meta name="twitter:creator" content="Krzysztof Zawisła"/>
         <meta name="msapplication-TileColor" content="#e05416"/>
         <link rel="icon" href="/static/favicon.png"/>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet"/>
         <link href="/static/manifest.json" rel="manifest"/>
       </Head>
       <div id="Wrapper">
