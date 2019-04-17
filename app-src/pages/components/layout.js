@@ -6,13 +6,13 @@ import Footer from "./footer";
 const { Fragment } = React;
 
 const Layout = (props) => {
-  const state = {
+  const values = {
     pageTitle: props.pageTitle == "" || props.pageTitle == undefined ? "" : props.pageTitle
   };
   return(
     <Fragment>
       <Head>
-        <title>Plan lekcji { state.pageTitle }</title>
+        <title>Plan lekcji { values.pageTitle }</title>
         <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" as="fetch" crossorigin="anonymous"/>

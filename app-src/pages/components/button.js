@@ -5,9 +5,14 @@ export default class Button extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      buttonPrefetch: false
+    }
+    this.values = {
       buttonText: props.buttonText == "" || props.buttonText == undefined ? "Powrót na stronę główną" : props.buttonText,
       buttonLink: props.buttonLink == "" || props.buttonLink == undefined ? "/" : props.buttonLink,
-      buttonLinkAs: props.buttonLinkAs == "" || props.buttonLinkAs == undefined ? null : props.buttonLinkAs,
+      buttonLinkAs: props.buttonLinkAs == "" || props.buttonLinkAs == undefined ? null : props.buttonLinkAs
+    }
+    this.functions = {
       buttonColor: () => {
         if(props.buttonColor == "" || props.buttonColor == undefined) {
           return "#e05416"
@@ -22,8 +27,7 @@ export default class Button extends React.Component {
           default:
             return "#e05416";
         }
-      },
-      buttonPrefetch: false
+      }
     }
   }
   componentDidMount() {
@@ -33,13 +37,13 @@ export default class Button extends React.Component {
   }
   render() {
     return(
-      <Link prefetch={ this.state.buttonPrefetch } href={ this.state.buttonLink } as={ this.state.buttonLinkAs }>
+      <Link prefetch={ this.state.buttonPrefetch } href={ this.values.buttonLink } as={ this.values.buttonLinkAs }>
         <div className="Button">
           <style jsx>{`
             .Button {
               width: 100%;
               margin 0 auto 15px auto;
-              background: ${ this.state.buttonColor() };
+              background: ${ this.functions.buttonColor() };
               padding: 5px;
               text-align: center;
               border-radius: 5px;
@@ -50,7 +54,7 @@ export default class Button extends React.Component {
               margin-top: 0;
             }
           `}</style>
-          { this.state.buttonText }
+          { this.values.buttonText }
         </div>
       </Link>
     );

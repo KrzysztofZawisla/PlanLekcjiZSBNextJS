@@ -1,5 +1,5 @@
 const Day = (props) => {
-  const state = {
+  const functions = {
     dayNumber: () => {
       switch(props.dayNumber) {
         case "1":
@@ -20,7 +20,7 @@ const Day = (props) => {
           return "Podałeś zły dzień tygodnia";
       }
     }
-  };
+  }
   return(
     <div className="Day">
       <style jsx>{`
@@ -34,7 +34,7 @@ const Day = (props) => {
           margin-top: 5px;
         }
       `}</style>
-      <h3>{ state.dayNumber() }</h3>
+      <h3>{ functions.dayNumber() }</h3>
       <div className="DayLessons">
         { props.children }
       </div>

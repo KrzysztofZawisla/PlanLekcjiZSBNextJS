@@ -1,5 +1,10 @@
 const Lesson = (props) => {
-  const state = {
+  const values = {
+    lessonSubject: props.lessonSubject == "" || props.lessonSubject == undefined ? "Nie podałeś nazwy przedmiotu" : props.lessonSubject,
+    lessonClass: props.lessonClass == "" || props.lessonClass == undefined ? "" : "sala "+props.lessonClass,
+    lessonTeacher: props.lessonTeacher == "" || props.lessonTeacher == undefined ? "" : props.lessonTeacher.toUpperCase()
+  }
+  const functions = {
     lessonNumber: () => {
       switch(props.lessonNumber) {
         case "0":
@@ -26,7 +31,6 @@ const Lesson = (props) => {
           return "Podałeś niewłaściwy numer lekcji";
       }
     },
-    lessonSubject: props.lessonSubject == "" || props.lessonSubject == undefined ? "Nie podałeś nazwy przedmiotu" : props.lessonSubject,
     lessonGroup: () => {
       if(props.lessonGroup == "" || props.lessonGroup == undefined) {
         return null;
@@ -59,9 +63,7 @@ const Lesson = (props) => {
         default:
           return "";
       }
-    },
-    lessonClass: props.lessonClass == "" || props.lessonClass == undefined ? "" : "sala "+props.lessonClass,
-    lessonTeacher: props.lessonTeacher == "" || props.lessonTeacher == undefined ? "" : props.lessonTeacher.toUpperCase()
+    }
   }
   return(
     <div className="Lesson">
@@ -72,7 +74,7 @@ const Lesson = (props) => {
           background: #fafafa;
         }
       `}</style>
-      { state.lessonNumber() } { state.lessonSubject } { state.lessonGroup() } { state.lessonClass } { state.lessonTeacher }
+      { functions.lessonNumber() } { values.lessonSubject } { functions.lessonGroup() } { values.lessonClass } { values.lessonTeacher }
     </div>
   );
 }

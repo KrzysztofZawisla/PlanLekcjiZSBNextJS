@@ -5,13 +5,14 @@ export default class Webscrap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      workingText: "Pracuje nad tym... ⏳",
-      webscrapData: null,
+      workingText: "Pracuje nad tym... ⏳"
+    }
+    this.values = {
       webscrapClass: props.webscrapClass == "" || props.webscrapClass == undefined ? "error" : props.webscrapClass.toLowerCase()
     }
   }
   componentDidMount() {
-    axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?klasa="+this.state.webscrapClass).then((res) => {
+    axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?klasa="+this.values.webscrapClass).then((res) => {
       this.setState({
         webscrapData: res.data,
         workingText: ""
