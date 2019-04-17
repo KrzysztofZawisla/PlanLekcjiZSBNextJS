@@ -4,25 +4,29 @@ import React from "react";
 export default class Webscrap extends React.Component {
   constructor(props) {
     super(props);
-    this.workingText = "Pracuje nad tym... ⏳",
-    this.webscrapData = null,
-    this.webscrapClass = props.webscrapClass == "" || props.webscrapClass == undefined ? "error" : props.webscrapClass.toLowerCase()
+    this.state = {
+      workingText: "Pracuje nad tym... ⏳",
+      webscrapData: null,
+      webscrapClass: props.webscrapClass == "" || props.webscrapClass == undefined ? "error" : props.webscrapClass.toLowerCase()
+    }
   }
   componentDidMount() {
-    axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?klasa="+this.webscrapClass).then((res) => {
-      this.webscrapData = res.data;
-      this.workingText = "";
-      this.forceUpdate();
-    }).catch(() => {
-      this.workingText = "Coś poszło nie tak 🙁";
-      this.forceUpdate();
+    axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?klasa="+this.state.webscrapClass).then((res) => {
+      this.setState({
+        webscrapData: res.data,
+        workingText: ""
+      });
+    }).catch((err) => {
+      this.setState({
+        workingText: "Coś poszło nie tak 🙁"
+      });
     });
   }
   render() {
     return(
       <div id="resDiv">
-        <div>{ this.workingText }</div>
-        <div dangerouslySetInnerHTML={{ __html: this.webscrapData }}></div>
+        <div>{ this.state.workingText }</div>
+        <div dangerouslySetInnerHTML={{ __html: this.state.webscrapData }}></div>
         <style jsx>{`
           #resDiv {
             width: 100%;

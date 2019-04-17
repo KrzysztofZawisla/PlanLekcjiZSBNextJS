@@ -1,5 +1,5 @@
 const Lesson = (props) => {
-  const states = {
+  const state = {
     lessonNumber: () => {
       switch(props.lessonNumber) {
         case "0":
@@ -72,7 +72,7 @@ const Lesson = (props) => {
           background: #fafafa;
         }
       `}</style>
-      { states.lessonNumber() } { states.lessonSubject } { states.lessonGroup() } { states.lessonClass } { states.lessonTeacher }
+      { state.lessonNumber() } { state.lessonSubject } { state.lessonGroup() } { state.lessonClass } { state.lessonTeacher }
     </div>
   );
 }

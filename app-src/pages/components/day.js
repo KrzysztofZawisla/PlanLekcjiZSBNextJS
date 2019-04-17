@@ -1,5 +1,5 @@
 const Day = (props) => {
-  const states = {
+  const state = {
     dayNumber: () => {
       switch(props.dayNumber) {
         case "1":
@@ -34,7 +34,7 @@ const Day = (props) => {
           margin-top: 5px;
         }
       `}</style>
-      <h3>{ states.dayNumber() }</h3>
+      <h3>{ state.dayNumber() }</h3>
       <div className="DayLessons">
         { props.children }
       </div>
