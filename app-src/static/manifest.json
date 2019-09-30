@@ -1,9 +1,0 @@
-{
-  "name": "Plan lekcji ZSB",
-  "short_name": "Plan lekcji",
-  "description": "Aplikacja internetowa z planem lekcji.",
-  "theme_color": "#e05416",
-  "background_color": "#fff",
-  "display": "standalone",
-  "start_url": "/"
-}

@@ -1,5 +1,0 @@
-{
-  "version": 2,
-  "name": "planlekcjizsb",
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
-}
