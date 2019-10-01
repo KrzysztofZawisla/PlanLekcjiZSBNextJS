@@ -4,27 +4,6 @@ import React from "react";
 
 const classListStorage = [
   [
-    "4gI",
-    "4iB",
-    "4iA",
-    "4bB",
-    "4bA"
-  ],
-  [
-    "3gI",
-    "3iB",
-    "3iA",
-    "3bA",
-  ],
-  [
-    "2w",
-    "2wA",
-    "2iB",
-    "2iA",
-    "2gA",
-    "2bA"
-  ],
-  [
     "1bA",
     "1wA",
     "1gA",
@@ -35,6 +14,27 @@ const classListStorage = [
     "1ga8",
     "1ia8",
     "1w8"
+  ],
+  [
+    "2w",
+    "2wA",
+    "2iB",
+    "2iA",
+    "2gA",
+    "2bA"
+  ],
+  [
+    "3gI",
+    "3iB",
+    "3iA",
+    "3bA",
+  ],
+  [
+    "4gI",
+    "4iB",
+    "4iA",
+    "4bB",
+    "4bA"
   ]
 ];
 
