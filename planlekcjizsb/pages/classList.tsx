@@ -23,7 +23,6 @@ class ClassList extends React.Component<ClassListProps<any>, ClassListState> {
     let classListStorage;
     axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/sendClasses.php").then((res) => {
       classListStorage = res.data.classes;
-      console.log(res.data.classes);
       const order: number = parseInt(this.props.url.query.order);
       let key: number = 0;
       for (let i = 0; i < classListStorage.length; i++) {
