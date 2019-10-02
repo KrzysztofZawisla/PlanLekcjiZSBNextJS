@@ -33,10 +33,14 @@ class ClassList extends React.Component<ClassListProps<any>, ClassListState> {
           }
         }
       }
+      this.setState({
+        buttons: this.state.buttons
+      })
     });
   }
 
   render() {
+    console.log(this.state.buttons);
     return (
       <Layout>
         {this.state.buttons}
