@@ -22,7 +22,7 @@ export default class ClassList extends React.Component<ClassListProps<any>, Clas
     let classListStorage;
     axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/sendClasses.php").then((res) => {
       classListStorage = res.data.classes;
-      const order: number = parseInt(this.props.url.query.order);
+      const order: number = parseInt(this.props.url.query.order) - 1;
       let key: number = 0;
       for (let i = 0; i < classListStorage.length; i++) {
         if (i === order) {
