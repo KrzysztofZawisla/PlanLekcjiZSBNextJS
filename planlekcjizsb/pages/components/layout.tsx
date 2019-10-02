@@ -5,9 +5,18 @@ import Footer from "./footer";
 
 const { Fragment } = React;
 
-const Layout = (props) => {
-  const values = {
-    pageTitle: props.pageTitle == "" || props.pageTitle == undefined ? "" : props.pageTitle
+interface LayoutValues {
+  pageTitle: string;
+}
+
+interface LayoutProps<T> {
+  pageTitle?: string;
+  children?: T;
+}
+
+const Layout: React.FunctionComponent<LayoutProps<any>> = (props: LayoutProps<any>) => {
+  const values: LayoutValues = {
+    pageTitle: (props.pageTitle == "" || props.pageTitle == undefined) ? "" : props.pageTitle
   };
   return (
     <Fragment>

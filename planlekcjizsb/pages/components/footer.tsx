@@ -1,4 +1,8 @@
-const Footer = () => {
+import React from "react";
+
+interface FooterProps {};
+
+const Footer: React.FunctionComponent<FooterProps> = () => {
   return (
     <footer id="Footer">
       <style jsx>{`

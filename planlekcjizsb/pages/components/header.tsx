@@ -1,6 +1,9 @@
 import Link from "next/link";
+import React from "react";
 
-const Header = () => {
+interface HeaderProps {};
+
+const Header: React.FunctionComponent<HeaderProps> = () => {
   return (
     <header id="Header">
       <style jsx>{`
@@ -18,7 +21,7 @@ const Header = () => {
           border-radius: 15px;
         }
       `}</style>
-      <Link href="/"><a><img src="/static/logo.png" alt="Logo" /></a></Link>
+      <Link href="/"><a><img src="/static/logo.png" alt="Logo"/></a></Link>
     </header>
   );
 }
