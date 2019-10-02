@@ -14,10 +14,9 @@ class Class extends React.Component<ClassProps<any>, ClassState> {
   }
   render() {
     const title = this.props.url.query.title;
-    const classAPI = this.props.url.query.class;
     return (
       <Layout pageTitle={title}>
-        <Webscrap webscrapClass={classAPI}/>
+        <Webscrap/>
       </Layout>
     );
   }

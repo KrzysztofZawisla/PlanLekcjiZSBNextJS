@@ -1,12 +1,9 @@
+import { withRouter } from 'next/router'
 import axios from 'axios';
 import React from "react";
 
-interface WebscrapValues {
-  webscrapClass: string;
-};
-
-interface WebscrapProps {
-  webscrapClass: string;
+interface WebscrapProps<T> {
+  router?: T;
 };
 
 interface WebscrapState {
@@ -14,19 +11,31 @@ interface WebscrapState {
   webscrapData?: string;
 };
 
-export default class Webscrap extends React.Component<WebscrapProps, WebscrapState> {
-  private values: WebscrapValues
-  constructor(props: WebscrapProps) {
+class Webscrap extends React.Component<WebscrapProps<any>, WebscrapState> {
+  constructor(props: WebscrapProps<any>) {
     super(props);
     this.state = {
       workingText: "Pracuje nad tym... ⏳"
     };
-    this.values = {
-      webscrapClass: props.webscrapClass == "" || props.webscrapClass == undefined ? "error" : props.webscrapClass.toLowerCase()
-    };
   }
+
+  static async getInitialProps({ query }) {
+    const webscrapClass = query;
+    return { webscrapClass }
+  }
+
   componentDidMount() {
-    axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?class=" + this.values.webscrapClass).then((res) => {
+    console.log(this.props);
+    const regex = new RegExp("class=.*&", "g");
+    const adress = this.props.router.asPath;
+    let classToWebscrap: string | RegExpExecArray | null = regex.exec(adress);
+    if(classToWebscrap !== null) {
+      classToWebscrap = classToWebscrap[0];
+      classToWebscrap = classToWebscrap.substr(6, classToWebscrap.length - 1);
+    } else {
+      classToWebscrap = "error";
+    }
+    axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/api.php?class=" + classToWebscrap).then((res) => {
       this.setState({
         webscrapData: res.data,
         workingText: ""
@@ -57,3 +66,5 @@ export default class Webscrap extends React.Component<WebscrapProps, WebscrapSta
     );
   }
 }
+
+export default withRouter((Webscrap as any));
