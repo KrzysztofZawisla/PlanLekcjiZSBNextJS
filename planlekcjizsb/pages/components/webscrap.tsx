@@ -25,7 +25,6 @@ class Webscrap extends React.Component<WebscrapProps<any>, WebscrapState> {
   }
 
   componentDidMount() {
-    console.log(this.props);
     const regex = new RegExp("class=.*&", "g");
     const adress = this.props.router.asPath;
     let classToWebscrap: string | RegExpExecArray | null = regex.exec(adress);
