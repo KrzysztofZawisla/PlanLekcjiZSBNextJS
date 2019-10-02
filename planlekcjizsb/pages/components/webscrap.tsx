@@ -19,11 +19,6 @@ class Webscrap extends React.Component<WebscrapProps<any>, WebscrapState> {
     };
   }
 
-  static async getInitialProps({ query }) {
-    const webscrapClass = query;
-    return { webscrapClass }
-  }
-
   componentDidMount() {
     const regex = new RegExp("class=.*&", "g");
     const adress = this.props.router.asPath;
