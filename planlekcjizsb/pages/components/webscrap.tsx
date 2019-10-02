@@ -18,7 +18,6 @@ class Webscrap extends React.Component<WebscrapProps<any>, WebscrapState> {
       workingText: "Pracuje nad tym... ⏳"
     };
   }
-
   componentDidMount() {
     const regex = new RegExp("class=.*&", "g");
     const adress = this.props.router.asPath;

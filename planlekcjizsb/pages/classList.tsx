@@ -11,14 +11,13 @@ interface ClassListState {
   buttons: JSX.Element[];
 };
 
-class ClassList extends React.Component<ClassListProps<any>, ClassListState> {
+export default class ClassList extends React.Component<ClassListProps<any>, ClassListState> {
   constructor(props: ClassListProps<any>) {
     super(props);
     this.state = {
       buttons: []
     }
   }
-
   componentDidMount() {
     let classListStorage;
     axios.get("https://preset-october.000webhostapp.com/planlekcjizsb/api/sendClasses.php").then((res) => {
@@ -38,7 +37,6 @@ class ClassList extends React.Component<ClassListProps<any>, ClassListState> {
       })
     });
   }
-
   render() {
     return (
       <Layout>
@@ -47,5 +45,3 @@ class ClassList extends React.Component<ClassListProps<any>, ClassListState> {
     );
   }
 }
-
-export default ClassList;

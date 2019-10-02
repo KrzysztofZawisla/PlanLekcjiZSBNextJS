@@ -8,7 +8,7 @@ interface ClassProps<T> {
 
 interface ClassState {};
 
-class Class extends React.Component<ClassProps<any>, ClassState> {
+export default class Class extends React.Component<ClassProps<any>, ClassState> {
   constructor(props: ClassProps<any>) {
     super(props);
   }
@@ -20,7 +20,4 @@ class Class extends React.Component<ClassProps<any>, ClassState> {
       </Layout>
     );
   }
-  
 }
-
-export default Class;
